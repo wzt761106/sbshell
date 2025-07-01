@@ -23,6 +23,7 @@ if command -v sing-box &> /dev/null; then
             1)
                 echo "准备下载稳定版..."
                 apt-get download sing-box
+                echo "选择了切换到稳定版，安装完整后建议选择N"
                 sudo apt-get remove --auto-remove sing-box-beta -y
                 sudo dpkg -i sing-box_*.deb
                 rm -f sing-box_*.deb
@@ -31,6 +32,7 @@ if command -v sing-box &> /dev/null; then
             2)
                 echo "准备下载测试版..."
                 apt-get download sing-box-beta
+                echo "选择了切换到测试版，安装完整后建议选择N"
                 sudo apt-get remove --auto-remove sing-box -y
                 sudo dpkg -i sing-box-beta_*.deb
                 rm -f sing-box-beta_*.deb

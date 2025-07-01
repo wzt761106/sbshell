@@ -52,10 +52,10 @@ Signed-By: /etc/apt/keyrings/sagernet.asc
         echo -e "${CYAN}sing-box 安装成功，版本：${NC} $sing_box_version"
          
         if ! id sing-box &>/dev/null; then
-            echo "正在创建 sing-box 系统用户..."
+            echo "正在创建 sing-box 系统用户"
             sudo useradd --system --no-create-home --shell /usr/sbin/nologin sing-box
         fi
-        echo "正在设置 /var/lib/sing-box 和 /etc/sing-box 目录权限..."
+        echo "正在设置sing-box权限..."
         sudo mkdir -p /var/lib/sing-box
         sudo chown -R sing-box:sing-box /var/lib/sing-box
         sudo chown -R sing-box:sing-box /etc/sing-box
