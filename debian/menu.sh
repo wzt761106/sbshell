@@ -2,7 +2,7 @@
 
 #################################################
 # 描述: Debian/Ubuntu/Armbian 官方sing-box 全自动脚本
-# 版本: 2.1.0
+# 版本: 2.1.1
 #################################################
 
 # 定义颜色
@@ -21,7 +21,7 @@ sudo mkdir -p "$SCRIPT_DIR"
 sudo chown "$(whoami)":"$(whoami)" "$SCRIPT_DIR"
 
 # 脚本的URL基础路径
-BASE_URL="https://gh-proxy.com/https://raw.githubusercontent.com/qljsyph/sbshell/refs/heads/beta/debian"
+BASE_URL="https://gh-proxy.com/https://raw.githubusercontent.com/qljsyph/sbshell/refs/heads/main/debian"
                                
 # 脚本列表
 SCRIPTS=(
