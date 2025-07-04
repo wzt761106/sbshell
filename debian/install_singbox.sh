@@ -87,8 +87,6 @@ Signed-By: /etc/apt/keyrings/sagernet.asc
                     echo "User=sing-box 已存在于 [Service] 下，无需修改。"
                 else
                     echo "User=sing-box 未设置，准备插入..."
-
-                    # 使用 awk 处理插入 User=sing-box 到 [Service] 段的下一行
                     awk '
                         BEGIN { in_service=0 }
                         /^\[Service\]/ { print; in_service=1; next }
@@ -100,8 +98,6 @@ Signed-By: /etc/apt/keyrings/sagernet.asc
                     ' "$service_file" > "${service_file}.tmp" && mv "${service_file}.tmp" "$service_file"
 
                     echo "已插入 User=sing-box 到 [Service] 段。"
-
-                    # 重新加载 systemd 配置
                     systemctl daemon-reexec
                     echo "已执行 systemctl daemon-reexec"
                 fi
