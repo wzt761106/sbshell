@@ -59,6 +59,9 @@ Signed-By: /etc/apt/keyrings/sagernet.asc
         sudo mkdir -p /var/lib/sing-box
         sudo chown -R sing-box:sing-box /var/lib/sing-box
         sudo chown -R sing-box:sing-box /etc/sing-box
+        if [ -f /etc/sing-box/cache.db ]; then
+           sudo chown sing-box:sing-box /etc/sing-box/cache.db
+        fi
     else
         echo -e "${RED}sing-box 安装失败，请检查日志或网络配置${NC}"
     fi
