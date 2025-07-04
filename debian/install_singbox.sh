@@ -60,8 +60,14 @@ Signed-By: /etc/apt/keyrings/sagernet.asc
         sudo chown -R sing-box:sing-box /var/lib/sing-box
         sudo chown -R sing-box:sing-box /etc/sing-box
         sudo chmod 770 /etc/sing-box
+        
         if [ -f /etc/sing-box/cache.db ]; then
-           sudo chown sing-box:sing-box /etc/sing-box/cache.db
+            sudo chown sing-box:sing-box /etc/sing-box/cache.db
+            sudo chmod 660 /etc/sing-box/cache.db
+        else
+            sudo -u sing-box touch /etc/sing-box/cache.db
+            sudo chown sing-box:sing-box /etc/sing-box/cache.db
+            sudo chmod 660 /etc/sing-box/cache.db
         fi
     else
         echo -e "${RED}sing-box 安装失败，请检查日志或网络配置${NC}"
