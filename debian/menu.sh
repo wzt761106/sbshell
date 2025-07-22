@@ -2,7 +2,7 @@
 
 #################################################
 # 描述: Debian/Ubuntu/Armbian 官方sing-box 全自动脚本
-# 版本: 2.1.1
+# 版本: 2.1.5
 #################################################
 
 # 定义颜色
@@ -21,7 +21,7 @@ sudo mkdir -p "$SCRIPT_DIR"
 sudo chown "$(whoami)":"$(whoami)" "$SCRIPT_DIR"
 
 # 脚本的URL基础路径
-BASE_URL="https://gh-proxy.com/https://raw.githubusercontent.com/qljsyph/sbshell/refs/heads/main/debian"
+BASE_URL="https://ghfast.top/https://raw.githubusercontent.com/qljsyph/sbshell/refs/heads/main/debian"
                                
 # 脚本列表
 SCRIPTS=(
@@ -44,6 +44,7 @@ SCRIPTS=(
     "check_config.sh"          # 检查配置文件
     "update_scripts.sh"        # 更新脚本
     "update_ui.sh"             # 控制面板安装/更新/检查
+    "delaytest.sh"             # 外网真实延迟测试
     "menu.sh"                  # 主菜单
 )
 
