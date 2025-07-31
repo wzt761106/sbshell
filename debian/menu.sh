@@ -274,7 +274,12 @@ handle_client_choice() {
         5) run_script "启动sing-box" "start_singbox.sh" --quiet ;;
         6) run_script "停止sing-box" "stop_singbox.sh" --quiet ;;
         7) run_script "管理自启动" "manage_autostart.sh" ;;
-        8) run_script "更新sing-box" "install_singbox.sh" ;;
+        8) if command -v sing-box &> /dev/null; then
+               bash "$SCRIPT_DIR/check_update.sh"
+           else
+               bash "$SCRIPT_DIR/install_singbox.sh"
+           fi
+           ;;
         9) run_script "更新所有脚本" "update_scripts.sh" ;;
         10) run_script "更新控制面板" "update_ui.sh" ;;
         11) run_script "网络设置" "set_network.sh" ;;
@@ -317,7 +322,12 @@ handle_server_choice() {
         3) run_systemctl "重启sing-box" "restart" ;;
         4) run_systemctl "设置开机自启" "enable" ;;
         5) sudo journalctl -u sing-box --output cat -f ;;
-        6) run_script "更新配置文件" "update_config.sh" ;;
+        6) if command -v sing-box &> /dev/null; then
+               bash "$SCRIPT_DIR/check_update.sh"
+           else
+               bash "$SCRIPT_DIR/install_singbox.sh"
+           fi
+           ;;
         7) run_script "更新sing-box" "install_singbox.sh" ;;
         8) run_script "更新脚本" "update_scripts.sh" ;;
         9) run_script "证书申请" "setup.sh" ;;
