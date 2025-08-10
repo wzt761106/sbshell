@@ -101,6 +101,8 @@
     ],
     "final": "兜底策略",
     "auto_detect_interface": true,
+    "default_mark": 666,
+    "default_domain_resolver": {"server": "public"}
   },
     "log": {
     "disabled": false,
