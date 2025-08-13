@@ -56,5 +56,6 @@ https://gh-proxy.com/https://raw.githubusercontent.com/qljsyph/sbshell/refs/head
 ## 其他问题：
 
 **请查看[wiki](https://github.com/qljsyph/sbshell/wiki)**  
+**网络优化功能不懂的不要使用会影响游戏性**
 
 
